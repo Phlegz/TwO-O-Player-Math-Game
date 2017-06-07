@@ -1,14 +1,19 @@
 class Player
 
   DEFAULT_LIVES = 3
-  attr_accessor :lives
+  attr_accessor :lives, :name
 
-  def initialize
+  def initialize(name)
     @lives = DEFAULT_LIVES
+    @name = name
   end
 
-  def decrement(lives)
-    @lives = lives - 1
+  def decrement
+    @lives = @lives - 1
+  end
+
+  def alive?
+    @lives > 0
   end
 
 end
